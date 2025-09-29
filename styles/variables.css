@@ -37,4 +37,22 @@
   --border-radius-lg: 8px;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Breakpoints para Responsive Design */
+  --breakpoint-sm: 576px;    /* Teléfonos pequeños */
+  --breakpoint-md: 768px;    /* Tablets */
+  --breakpoint-lg: 992px;    /* Laptops */
+  --breakpoint-xl: 1200px;   /* Escritorio */
+  --breakpoint-xxl: 1400px;  /* Pantallas grandes */
+
+  /* Z-index para layering */
+  --z-dropdown: 1000;
+  --z-modal: 1050;
+  --z-tooltip: 1070;
+  --z-navbar: 1030;
+
+  /* Transiciones estándar */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
 }
