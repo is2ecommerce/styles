@@ -4,39 +4,56 @@ Sistema completo de estilos SCSS optimizado para **proyecto Angular** de e-comme
 
 ## 🚀 Inicio Rápido
 
+### Opción 1: Descarga directa
 ```bash
-# 1. Clona este repositorio en tu proyecto Angular
-git clone https://github.com/LauraCD2/styles.git
+# 1. Descarga los archivos SCSS
+# Descarga _variables.scss y _componen## 📦 Instalación como Dependencia
 
-# 2. Instala SASS si no lo tienes
+```bash
+# Si quieres usar como paquete NPM en el futuro
+npm install git+https://github.com/LauraCD2/styles.git
+```
+
+## 🔧 Uso con Herramientas de Build
+
+Este paquete es compatible con:
+- ✅ Angular CLI
+- ✅ Webpack  
+- ✅ Vite
+- ✅ Cualquier compilador SASS# https://github.com/LauraCD2/styles
+
+# 2. Colócalos en tu proyecto (ejemplo: src/styles/)
+# tu-proyecto/src/styles/_variables.scss
+# tu-proyecto/src/styles/_components.scss
+
+# 3. Instala SASS si no lo tienes
 npm install sass --save-dev
 
-# 3. Configura angular.json
-{
-  "styles": [
-    "src/angular-styles.css",
-    "src/styles.scss"
-  ]
-}
-
 # 4. Importa en tu styles.scss global
-@import './variables';
-@import './components';
+@import 'styles/variables';
+@import 'styles/components';
+```
+
+### Opción 2: Como submódulo git
+```bash
+# En la raíz de tu proyecto
+git submodule add https://github.com/LauraCD2/styles.git src/styles
+
+# Importa en tu styles.scss
+@import 'styles/variables';
+@import 'styles/components';
 ```
 
 ## 📁 Estructura del Proyecto
 
 ```
-styles/                          # ← Repositorio para Angular
-├── 🎯 ARCHIVOS PRINCIPALES SCSS:
-│   ├── _variables.scss          # Variables y mixins SCSS
-│   ├── _components.scss         # Todos los componentes (incluye carrito)
-├── � EJEMPLO CARRITO ANGULAR:
-│   ├── carrito.component.ts     # Componente TypeScript completo
-│   ├── carrito.component.html   # Template Angular con directivas
-│   └── carrito.component.scss   # Estilos específicos del componente
-├── package.json                 # Configuración NPM
-└── README.md                   # Esta documentación
+styles/                          # ← Repositorio principal
+├── 🎯 ARCHIVOS PRINCIPALES:
+│   ├── _variables.scss          # Variables SCSS (colores, espaciado, tipografía)
+│   ├── _components.scss         # Componentes y mixins SCSS
+│   ├── package.json            # Configuración del paquete NPM
+│   └── README.md               # Documentación (este archivo)
+└── .gitignore                  # Archivos excluidos del control de versiones
 ```
 
 ## 🎨 Variables SCSS Principales
@@ -131,10 +148,46 @@ $breakpoint-xxl: 1400px;        // Pantallas grandes
     padding: $spacing-xs; // En móviles
   }
 }
+```
 
-## 📱 Componentes Pre-construidos
+## 🎯 **SISTEMA COMPLETO 100% E-COMMERCE**
 
-### Botones con Variaciones
+### ✅ **Componentes Incluidos (TODOS los esenciales):**
+
+#### **� Interfaz Principal:**
+- **Botones** (variantes, tamaños, estados, iconos)
+- **Navegación** (navbar responsive, breadcrumbs, menús)
+- **Cards de productos** (badges, overlay, quick actions)
+- **Grids adaptativas** (productos, categorías)
+
+#### **🛒 E-commerce Específico:**
+- **Carrito de compras** (items, contador, resumen)
+- **Formularios** (checkout, validación, estados)
+- **Variantes de producto** (colores, tallas, opciones)
+- **Sistema de rating** (estrellas, reseñas)
+- **Filtros avanzados** (accordion, price slider)
+- **Búsqueda** (autocompletado, sugerencias)
+
+#### **💡 UX Moderna:**
+- **Modal/Dialog** (quick view, confirmaciones)
+- **Toast Notifications** (feedback temporal)
+- **Skeleton Loading** (placeholders modernos)
+- **Tooltip** (información contextual)
+- **Pagination** (navegación de páginas)
+- **Tabs** (detalles de producto, especificaciones)
+- **Carousel/Gallery** (imágenes de producto)
+- **Progress Bars** (estados de progreso)
+
+#### **📱 Responsive & Accesibilidad:**
+- **Breakpoints completos** (mobile-first)
+- **Estados de loading** (spinners, overlays)
+- **Alertas contextuales** (éxito, error, warning)
+- **Badges y labels** (indicadores visuales)
+- **Animaciones** (transiciones suaves)
+
+## 📱 Ejemplos de Uso
+
+### Botones Completos
 ```html
 <!-- Botones básicos -->
 <button class="btn">Botón Base</button>
@@ -142,9 +195,122 @@ $breakpoint-xxl: 1400px;        // Pantallas grandes
 <button class="btn btn-success">Éxito</button>
 <button class="btn btn-outline">Outline</button>
 
-<!-- Tamaños -->
+<!-- Tamaños y variantes -->
 <button class="btn btn-sm">Pequeño</button>
-<button class="btn btn-lg">Grande</button>
+<button class="btn btn-lg btn-icon">
+  <span>🛒</span> Agregar al Carrito
+</button>
+```
+
+### Modal/Dialog Sistema
+```html
+<div class="modal-overlay show">
+  <div class="modal modal-lg show">
+    <div class="modal-header">
+      <h3 class="modal-title">Vista Rápida</h3>
+      <button class="modal-close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="product-quickview">...</div>
+    </div>
+  </div>
+</div>
+```
+
+### Pagination Completa
+```html
+<div class="pagination">
+  <button class="pagination-item prev" disabled>← Anterior</button>
+  <button class="pagination-item">1</button>
+  <button class="pagination-item active">2</button>
+  <button class="pagination-item">3</button>
+  <span class="pagination-info">Página 2 de 10</span>
+  <button class="pagination-item next">Siguiente →</button>
+</div>
+```
+
+### Toast Notifications
+```html
+<div class="toast-container">
+  <div class="toast success show">
+    <div class="toast-content">
+      <div class="toast-icon">✓</div>
+      <div class="toast-message">
+        <div class="toast-title">¡Éxito!</div>
+        <div class="toast-text">Producto agregado al carrito</div>
+      </div>
+    </div>
+    <div class="toast-progress">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+</div>
+```
+
+### Tabs para Detalles de Producto
+```html
+<div class="tabs-container product-tabs">
+  <div class="tabs-nav">
+    <button class="tab-button active">Descripción</button>
+    <button class="tab-button">Especificaciones</button>
+    <button class="tab-button">Reseñas <span class="tab-badge">23</span></button>
+  </div>
+  <div class="tabs-content">
+    <div class="tab-panel description active">...</div>
+    <div class="tab-panel specifications">...</div>
+    <div class="tab-panel reviews">...</div>
+  </div>
+</div>
+```
+
+### Carousel de Imágenes
+```html
+<div class="product-gallery">
+  <div class="carousel main-carousel">
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <img src="product1.jpg" alt="Producto">
+      </div>
+    </div>
+    <button class="carousel-controls prev">‹</button>
+    <button class="carousel-controls next">›</button>
+  </div>
+</div>
+```
+
+### Filtros con Accordion
+```html
+<div class="filters-accordion">
+  <div class="accordion">
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="accordion-title">Precio</span>
+        <span class="accordion-icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <div class="accordion-body">
+          <div class="price-range-slider">
+            <div class="price-inputs">
+              <input type="number" placeholder="Min" min="0">
+              <input type="number" placeholder="Max" min="0">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+### Skeleton Loading
+```html
+<div class="skeleton-product-card">
+  <div class="skeleton-image"></div>
+  <div class="skeleton-title"></div>
+  <div class="skeleton-price"></div>
+  <div class="skeleton-description"></div>
+  <div class="skeleton-button"></div>
+</div>
 ```
 
 ### Cards de Productos E-commerce
@@ -152,13 +318,25 @@ $breakpoint-xxl: 1400px;        // Pantallas grandes
 ```html
 <div class="products-grid">
   <div class="product-card">
+    <div class="product-badge badge-sale">-20%</div>
     <div class="product-image">
       <img src="producto.jpg" alt="Producto">
+      <div class="product-overlay">
+        <div class="quick-actions">
+          <button class="btn btn-sm">👁️</button>
+          <button class="btn btn-sm">❤️</button>
+        </div>
+      </div>
     </div>
-    <h3 class="product-title">Smartphone Galaxy</h3>
-    <p class="product-price">$599.99</p>
-    <p class="product-description">Descripción del producto...</p>
-    <button class="btn">Agregar al Carrito</button>
+    <div class="product-info">
+      <h3 class="product-title">Smartphone Galaxy</h3>
+      <div class="product-rating">
+        <div class="stars">★★★★☆</div>
+        <span class="rating-count">(127)</span>
+      </div>
+      <p class="product-price">$599.99</p>
+      <button class="btn btn-full">Agregar al Carrito</button>
+    </div>
   </div>
 </div>
 ```
@@ -297,36 +475,38 @@ $theme: mat-light-theme($primary-palette, $accent-palette);
 
 ## 🏗️ Cómo Integrar en tu Proyecto Angular
 
-### 1. Copia los archivos principales a tu proyecto:
+### 1. Estructura recomendada:
 
 ```
 tu-proyecto-angular/src/
 ├── styles/                      # ← Crear esta carpeta
-│   ├── _variables.scss          # ← Copiar desde la raíz
-│   ├── _components.scss         # ← Copiar desde la raíz
-│   └── angular-styles.css       # ← Copiar desde la raíz
+│   ├── _variables.scss          # ← Copiar desde este repo
+│   └── _components.scss         # ← Copiar desde este repo
 ├── app/
 │   └── components/
 │       └── product-card/
-│           ├── product-card.component.scss  # @import '../../../styles/variables'
+│           ├── product-card.component.scss
 │           └── product-card.component.ts
-└── styles.scss                 # ← Import global: @import 'styles/variables'; @import 'styles/components';
+└── styles.scss                 # ← Import global
 ```
 
-### 2. Rutas de importación correctas:
+### 2. Configuración en angular.json:
+
+```json
+"styles": [
+  "src/styles.scss"
+]
+```
+
+### 3. Rutas de importación:
 
 ```scss
-// En styles.scss (global) - si copias archivos a carpeta styles/
+// En src/styles.scss (global)
 @import 'styles/variables';
 @import 'styles/components';
 
-// O si los pones en la raíz de src/
-@import 'variables';
-@import 'components';
-
-// En componentes individuales (ajusta según tu estructura)
-@import '../../variables';        // Si están en src/
-@import '../../../styles/variables';  // Si están en src/styles/
+// En componentes individuales
+@import '../../../styles/variables';  // Ajusta según tu estructura
 ```
 
 ## � Scripts NPM Incluidos
@@ -354,13 +534,38 @@ Para proyectos **no-Angular**, revisa `css-generic/` que contiene:
 4. **Componentes reutilizables**: Extiende con `@include` en lugar de copiar CSS
 5. **Nomenclatura consistente**: Sigue la convención BEM cuando sea necesario
 
-## 🎯 Optimizado para E-commerce
+## 🎯 **SISTEMA 100% COMPLETO PARA E-COMMERCE**
 
-✅ **Cards de productos** con hover y estados
-✅ **Botones de acción** (comprar, agregar, favoritos)
-✅ **Formularios de checkout** con validación visual
-✅ **Navegación responsive** con carrito y búsqueda
-✅ **Estados de carga** para mejor UX
-✅ **Alertas contextuales** (éxito, error, advertencia)
-✅ **Grid adaptativo** para catálogos de productos
-✅ **Integración Material Design** para componentes avanzados
+### ✅ **Componentes Principales:**
+- **Cards de productos** con badges, overlay y quick actions
+- **Sistema completo de botones** (variantes, tamaños, estados)
+- **Navegación responsive** con carrito y breadcrumbs
+- **Formularios de checkout** con validación visual
+- **Grids adaptativo** para catálogos de productos
+
+### ✅ **Componentes Avanzados:**
+- **Modal/Dialog** para quick view y confirmaciones
+- **Pagination** para navegación de páginas
+- **Tabs** para detalles de producto y especificaciones
+- **Toast Notifications** para feedback temporal
+- **Carousel/Gallery** para múltiples imágenes
+- **Accordion** para filtros y FAQs colapsables
+
+### ✅ **UX Moderna:**
+- **Skeleton Loading** placeholders modernos
+- **Tooltip** información contextual
+- **Price Range Slider** filtros de precio
+- **Progress Bars** estados de progreso
+- **Badges y Labels** indicadores visuales
+- **Animaciones** transiciones suaves
+
+### ✅ **Responsive & Performance:**
+- **Mobile-first** breakpoints completos
+- **Estados de loading** spinners y overlays
+- **Alertas contextuales** (éxito, error, warning)
+- **Utilities responsive** (hidden-mobile, desktop-only)
+- **Optimizado Angular** ViewEncapsulation compatible
+
+## 🚀 **RESULTADO FINAL**
+
+Este sistema de estilos ahora incluye **TODOS** los componentes necesarios para crear un e-commerce moderno y profesional en Angular. No necesitas librerías adicionales - todo está incluido y optimizado.
