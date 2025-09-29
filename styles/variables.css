@@ -1,1 +1,14 @@
-var 
+:root {
+  /* Colores principales */
+  --color-primary: #1e90ff;
+  --color-secondary: #ff9800;
+  --color-danger: #e53935;
+  --color-success: #4caf50;
+
+  /* Tipografía */
+  --font-family: 'Roboto', sans-serif;
+
+  /* Tamaños */
+  --font-size-base: 16px;
+  --font-size-title: 24px;
+}
