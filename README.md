@@ -1,110 +1,371 @@
-# Guía de Estilos del E-commerce
+# 🎯 Sistema de Estilos Angular E-commerce
 
-## Variables CSS Disponibles
+Sistema completo de estilos SCSS optimizado para **proyecto Angular** de e-commerce, con componentes reutilizables, mixins avanzados y diseño responsive.
 
-### Paleta de Colores
-- `--color-primary`: Color principal de la marca (#1565c0)
-- `--color-secondary`: Color secundario (#f06292)
-- `--color-success`: Para mensajes de éxito (#43a047)
-- `--color-error`: Para mensajes de error (#e53935)
-- `--color-warning`: Para advertencias (#ffa000)
-- `--color-background`: Color de fondo general (#f4f6fa)
-- `--color-text`: Color principal del texto (#282828)
+## 🚀 Inicio Rápido
 
-### Tipografía
-- `--font-main`: Fuente principal - Montserrat
-- `--font-secondary`: Fuente secundaria - Roboto
+```bash
+# 1. Clona este repositorio en tu proyecto Angular
+git clone https://github.com/LauraCD2/styles.git
 
-### Tamaños de Fuente
-- `--font-size-title`: Títulos principales (2.25rem)
-- `--font-size-subtitle`: Subtítulos (1.5rem)
-- `--font-size-base`: Texto base (1rem)
-- `--font-size-small`: Texto pequeño (0.875rem)
-- `--font-size-large`: Texto grande (1.125rem)
+# 2. Instala SASS si no lo tienes
+npm install sass --save-dev
+
+# 3. Configura angular.json
+{
+  "styles": [
+    "src/angular-styles.css",
+    "src/styles.scss"
+  ]
+}
+
+# 4. Importa en tu styles.scss global
+@import './variables';
+@import './components';
+```
+
+## 📁 Estructura del Proyecto
+
+```
+styles/                          # ← Repositorio principal ANGULAR
+├── 🎯 ARCHIVOS PRINCIPALES ANGULAR:
+│   ├── _variables.scss          # Variables SCSS para Angular
+│   ├── _components.scss         # Componentes SCSS con mixins
+│   └── angular-styles.css       # Estilos globales Angular
+├── 📁 examples/                 # Ejemplos de componentes Angular
+│   ├── product-card.component.ts
+│   └── product-card.component.scss
+├── 📁 css-generic/              # Versión CSS genérica (otros proyectos)
+│   ├── variables.css            # CSS vanilla
+│   ├── components.css           # CSS vanilla
+│   ├── ejemplo.html             # Demo HTML con CSS
+│   └── README.md               # Documentación CSS específica
+├── package.json                 # Configuración NPM
+└── README.md                   # Esta documentación
+```
+
+## 🎨 Variables SCSS Principales
+
+### Colores
+
+```scss
+$color-primary: #1565c0;        // Azul principal
+$color-secondary: #f06292;      // Rosa secundario
+$color-success: #43a047;        // Verde éxito
+$color-error: #e53935;          // Rojo error
+$color-warning: #ffa000;        // Amarillo advertencia
+$color-background: #f4f6fa;     // Fondo general
+$color-text: #282828;           // Texto principal
+$color-text-light: #666666;     // Texto secundario
+$color-border: #e0e0e0;         // Bordes
+$color-white: #ffffff;
+$color-black: #000000;
+
+```
 
 ### Espaciado
-- `--spacing-xs`: Extra pequeño (0.25rem)
-- `--spacing-sm`: Pequeño (0.5rem)
-- `--spacing-md`: Mediano (1rem)
-- `--spacing-lg`: Grande (1.5rem)
-- `--spacing-xl`: Extra grande (2rem)
+
+```scss
+$spacing-xs: 0.25rem;           // 4px
+$spacing-sm: 0.5rem;            // 8px  
+$spacing-md: 1rem;              // 16px
+$spacing-lg: 1.5rem;            // 24px
+$spacing-xl: 2rem;              // 32px
+```
+
+### Tipografía
+
+```scss
+$font-main: 'Montserrat', Arial, sans-serif;
+$font-secondary: 'Roboto', Helvetica, sans-serif;
+$font-size-title: 2.25rem;     // 36px
+$font-size-subtitle: 1.5rem;   // 24px
+$font-size-base: 1rem;         // 16px
+$font-size-small: 0.875rem;    // 14px
+$font-size-large: 1.125rem;    // 18px
+```
 
 ### Breakpoints Responsive
-- `--breakpoint-sm`: 576px (Teléfonos)
-- `--breakpoint-md`: 768px (Tablets)
-- `--breakpoint-lg`: 992px (Laptops)
-- `--breakpoint-xl`: 1200px (Escritorio)
 
-### Efectos y Transiciones
-- `--transition-fast`: Transición rápida (0.15s)
-- `--transition-normal`: Transición normal (0.3s)
-- `--shadow-sm`: Sombra sutil
-- `--shadow-md`: Sombra mediana
+```scss
+$breakpoint-sm: 576px;          // Teléfonos
+$breakpoint-md: 768px;          // Tablets
+$breakpoint-lg: 992px;          // Laptops
+$breakpoint-xl: 1200px;         // Escritorio
+$breakpoint-xxl: 1400px;        // Pantallas grandes
+```
 
-## Ejemplos de Uso
+## 🧩 Mixins Poderosos
 
-### Botones
-```css
-.btn-primary {
-  background-color: var(--color-primary);
-  font-family: var(--font-main);
-  font-size: var(--font-size-base);
+### Botones con Estados
+
+```scss
+.mi-boton {
+  @include button-style($color-primary);
+  // ¡Incluye hover, disabled, focus y transiciones automáticamente!
+}
+
+.boton-outline {
+  @include button-style(transparent, $color-primary);
+  border: 1px solid $color-primary;
 }
 ```
 
-### Títulos
-```css
-h1 {
-  font-family: var(--font-main);
-  font-size: var(--font-size-title);
-  color: var(--color-text);
+### Cards con Efectos
+
+```scss
+.mi-card {
+  @include card-style;
+  // ¡Sombras, hover, transform y transiciones incluidos!
 }
 ```
 
-### Mensajes de Estado
-```css
-.success-message {
-  background-color: var(--color-success);
-  color: white;
+### Responsive Design
+
+```scss
+.mi-elemento {
+  display: flex;
+  gap: $spacing-lg;
+  
+  @include responsive(md) {
+    display: block;     // En tablets
+    gap: $spacing-sm;
+  }
+  
+  @include responsive(sm) {
+    padding: $spacing-xs; // En móviles
+  }
 }
 
-.error-message {
-  background-color: var(--color-error);
-  color: white;
-}
-```
+## 📱 Componentes Pre-construidos
 
-## Archivos del Sistema
-
-- `styles/variables.css`: Variables CSS centralizadas
-- `styles/components.css`: Componentes básicos pre-diseñados
-
-## Cómo Implementar
-
-### 1. Importar en tu HTML
+### Botones con Variaciones
 ```html
-<link rel="stylesheet" href="styles/variables.css">
-<link rel="stylesheet" href="styles/components.css">
+<!-- Botones básicos -->
+<button class="btn">Botón Base</button>
+<button class="btn btn-secondary">Secundario</button>
+<button class="btn btn-success">Éxito</button>
+<button class="btn btn-outline">Outline</button>
+
+<!-- Tamaños -->
+<button class="btn btn-sm">Pequeño</button>
+<button class="btn btn-lg">Grande</button>
 ```
 
-### 2. O importar en tu CSS
-```css
-@import url('./styles/variables.css');
-@import url('./styles/components.css');
+### Cards de Productos E-commerce
+
+```html
+<div class="products-grid">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="producto.jpg" alt="Producto">
+    </div>
+    <h3 class="product-title">Smartphone Galaxy</h3>
+    <p class="product-price">$599.99</p>
+    <p class="product-description">Descripción del producto...</p>
+    <button class="btn">Agregar al Carrito</button>
+  </div>
+</div>
 ```
 
-## Componentes Disponibles
+### Formularios con Validación
 
-- **Botones**: `.btn`, `.btn-primary`, `.btn-secondary`, `.btn-outline`
-- **Cards de productos**: `.product-card`, `.product-title`, `.product-price`
-- **Formularios**: `.form-input`
-- **Alertas**: `.alert`, `.alert-success`, `.alert-error`, `.alert-warning`
-- **Navegación**: `.navbar`, `.nav-link`
+```html
+<div class="form-group">
+  <label class="form-label">Email *</label>
+  <input type="email" class="form-input error" placeholder="tu@email.com">
+  <span class="form-error" *ngIf="emailInvalid">Email inválido</span>
+</div>
+```
 
-## Buenas Prácticas
+### Navegación Responsive
 
-1. **Siempre usar variables CSS** en lugar de valores hardcodeados
-2. **Mantener consistencia** en toda la aplicación
-3. **Usar los componentes predefinidos** antes de crear nuevos
-4. **Seguir el patrón responsive** con los breakpoints definidos
-5. **Actualizar esta documentación** cuando se agreguen nuevas variables
+```html
+<nav class="navbar">
+  <div class="nav-container">
+    <a routerLink="/" class="nav-brand">Mi E-commerce</a>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a routerLink="/productos" class="nav-link" routerLinkActive="active">Productos</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/carrito" class="nav-link" routerLinkActive="active">Carrito</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+```
+
+### Alertas con Estados
+
+```html
+<div class="alert alert-success">
+  <span class="alert-icon">✓</span>
+  ¡Producto agregado exitosamente!
+  <button class="alert-close">×</button>
+</div>
+
+<div class="alert alert-error">
+  <span class="alert-icon">✗</span>
+  Error al procesar el pago
+</div>
+```
+
+### Loading States
+
+```html
+<!-- Overlay completo -->
+<div class="loading-overlay" *ngIf="loading">
+  <div class="loading-spinner"></div>
+</div>
+
+<!-- Spinner inline -->
+<div class="loading-spinner"></div>
+```
+
+## ⚡ Uso en Componentes Angular
+
+### 1. Import en tu componente
+
+```scss
+// product-list.component.scss
+@import '../../../styles/variables';  // Ruta desde tu componente
+
+:host {
+  display: block;
+  padding: $spacing-lg;
+}
+
+.producto-destacado {
+  @include card-style;
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+  color: $color-white;
+  
+  @include responsive(md) {
+    padding: $spacing-sm; // Menos padding en móvil
+  }
+}
+```
+
+### 2. Componente TypeScript de ejemplo
+
+```typescript
+// product-card.component.ts
+@Component({
+  selector: 'app-product-card',
+  template: `
+    <div class="product-card" [class.loading]="isLoading">
+      <div class="product-image">
+        <img [src]="product.image" [alt]="product.name">
+      </div>
+      <h3 class="product-title">{{ product.name }}</h3>
+      <p class="product-price">{{ product.price | currency }}</p>
+      <button class="btn" 
+              [class.btn-outline]="!inStock"
+              [disabled]="!inStock || isLoading"
+              (click)="addToCart()">
+        {{ getButtonText() }}
+      </button>
+      <div class="loading-spinner" *ngIf="isLoading"></div>
+    </div>
+  `,
+  styleUrls: ['./product-card.component.scss']
+})
+export class ProductCardComponent { /* ... */ }
+```
+
+## 🎯 Integración con Angular Material
+
+```scss
+// En tu theme personalizado (theme.scss)
+@import '~@angular/material/theming';
+@import './variables';
+
+// Usar tus colores en Material Design
+$primary-palette: mat-palette($mat-blue, 800); 
+$accent-palette: mat-palette($mat-pink, 300);   
+
+$theme: mat-light-theme($primary-palette, $accent-palette);
+@include angular-material-theme($theme);
+
+// Override de componentes Material con tus variables
+.mat-button {
+  font-family: $font-main !important;
+}
+
+.mat-form-field {
+  .mat-form-field-label {
+    color: $color-text-light;
+  }
+}
+```
+
+## 🏗️ Cómo Integrar en tu Proyecto Angular
+
+### 1. Copia los archivos principales a tu proyecto:
+
+```
+tu-proyecto-angular/src/
+├── styles/                      # ← Crear esta carpeta
+│   ├── _variables.scss          # ← Copiar desde la raíz
+│   ├── _components.scss         # ← Copiar desde la raíz
+│   └── angular-styles.css       # ← Copiar desde la raíz
+├── app/
+│   └── components/
+│       └── product-card/
+│           ├── product-card.component.scss  # @import '../../../styles/variables'
+│           └── product-card.component.ts
+└── styles.scss                 # ← Import global: @import 'styles/variables'; @import 'styles/components';
+```
+
+### 2. Rutas de importación correctas:
+
+```scss
+// En styles.scss (global) - si copias archivos a carpeta styles/
+@import 'styles/variables';
+@import 'styles/components';
+
+// O si los pones en la raíz de src/
+@import 'variables';
+@import 'components';
+
+// En componentes individuales (ajusta según tu estructura)
+@import '../../variables';        // Si están en src/
+@import '../../../styles/variables';  // Si están en src/styles/
+```
+
+## � Scripts NPM Incluidos
+
+```bash
+npm run build-css    # Compila SCSS a CSS
+npm run watch-css    # Watch mode para desarrollo
+npm run lint-scss    # Linting de archivos SCSS
+npm run format       # Formateo automático de código
+```
+
+## 🗂️ Versión CSS Genérica
+
+Para proyectos **no-Angular**, revisa `css-generic/` que contiene:
+
+- Variables CSS con custom properties
+- Componentes CSS vanilla
+- Ejemplo HTML funcional
+
+## 📏 Mejores Prácticas
+
+1. **ViewEncapsulation**: Mantén estilos de componentes encapsulados
+2. **SCSS sobre CSS**: Aprovecha variables, mixins y funciones
+3. **Mobile First**: Usa `@include responsive()` para adaptar a escritorio
+4. **Componentes reutilizables**: Extiende con `@include` en lugar de copiar CSS
+5. **Nomenclatura consistente**: Sigue la convención BEM cuando sea necesario
+
+## 🎯 Optimizado para E-commerce
+
+✅ **Cards de productos** con hover y estados
+✅ **Botones de acción** (comprar, agregar, favoritos)
+✅ **Formularios de checkout** con validación visual
+✅ **Navegación responsive** con carrito y búsqueda
+✅ **Estados de carga** para mejor UX
+✅ **Alertas contextuales** (éxito, error, advertencia)
+✅ **Grid adaptativo** para catálogos de productos
+✅ **Integración Material Design** para componentes avanzados
