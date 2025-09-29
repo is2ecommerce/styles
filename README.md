@@ -7,20 +7,11 @@ Sistema completo de estilos SCSS optimizado para **proyecto Angular** de e-comme
 ### Opción 1: Descarga directa
 ```bash
 # 1. Descarga los archivos SCSS
-# Descarga _variables.scss y _componen## 📦 Instalación como Dependencia
-
+### Opción 1: Descarga directa
 ```bash
-# Si quieres usar como paquete NPM en el futuro
-npm install git+https://github.com/LauraCD2/styles.git
-```
-
-## 🔧 Uso con Herramientas de Build
-
-Este paquete es compatible con:
-- ✅ Angular CLI
-- ✅ Webpack  
-- ✅ Vite
-- ✅ Cualquier compilador SASS# https://github.com/LauraCD2/styles
+# 1. Descarga los archivos SCSS
+# Descarga _variables.scss y _components.scss desde:
+# https://github.com/LauraCD2/styles
 
 # 2. Colócalos en tu proyecto (ejemplo: src/styles/)
 # tu-proyecto/src/styles/_variables.scss
@@ -43,6 +34,21 @@ git submodule add https://github.com/LauraCD2/styles.git src/styles
 @import 'styles/variables';
 @import 'styles/components';
 ```
+
+## 📦 Instalación como Dependencia
+
+```bash
+# Si quieres usar como paquete NPM en el futuro
+npm install git+https://github.com/LauraCD2/styles.git
+```
+
+## 🔧 Uso con Herramientas de Build
+
+Este paquete es compatible con:
+- ✅ Angular CLI
+- ✅ Webpack  
+- ✅ Vite
+- ✅ Cualquier compilador SASS
 
 ## 📁 Estructura del Proyecto
 
