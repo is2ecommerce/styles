@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo - Sistema de Estilos E-commerce</title>
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <a href="#" class="nav-link">Inicio</a>
+        <a href="#" class="nav-link">Productos</a>
+        <a href="#" class="nav-link">Carrito</a>
+    </nav>
+
+    <div style="padding: var(--spacing-lg); background-color: var(--color-background); min-height: 100vh;">
+        
+        <!-- Título principal -->
+        <h1 style="font-family: var(--font-main); font-size: var(--font-size-title); color: var(--color-text); margin-bottom: var(--spacing-lg);">
+            Catálogo de Productos
+        </h1>
+
+        <!-- Alertas de ejemplo -->
+        <div class="alert alert-success">¡Producto agregado al carrito exitosamente!</div>
+        <div class="alert alert-warning">Stock limitado: solo quedan 3 unidades</div>
+        
+        <!-- Grid de productos -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg); margin: var(--spacing-xl) 0;">
+            
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <div style="height: 200px; background-color: var(--color-border); border-radius: var(--border-radius); margin-bottom: var(--spacing-md);"></div>
+                <h3 class="product-title">Smartphone Galaxy</h3>
+                <p class="product-price">$599.99</p>
+                <button class="btn btn-primary" style="margin-top: var(--spacing-md);">Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <div style="height: 200px; background-color: var(--color-border); border-radius: var(--border-radius); margin-bottom: var(--spacing-md);"></div>
+                <h3 class="product-title">Laptop Gaming</h3>
+                <p class="product-price">$1,299.99</p>
+                <button class="btn btn-primary" style="margin-top: var(--spacing-md);">Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <div style="height: 200px; background-color: var(--color-border); border-radius: var(--border-radius); margin-bottom: var(--spacing-md);"></div>
+                <h3 class="product-title">Auriculares Bluetooth</h3>
+                <p class="product-price">$89.99</p>
+                <button class="btn btn-primary" style="margin-top: var(--spacing-md);">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <div style="max-width: 500px; margin: var(--spacing-xl) auto; background: var(--color-white); padding: var(--spacing-lg); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-md);">
+            <h2 style="font-family: var(--font-main); font-size: var(--font-size-subtitle); color: var(--color-text); margin-bottom: var(--spacing-md);">
+                ¿Necesitas ayuda?
+            </h2>
+            
+            <form>
+                <input type="email" class="form-input" placeholder="Tu email" style="margin-bottom: var(--spacing-md);">
+                <textarea class="form-input" rows="4" placeholder="Tu mensaje" style="margin-bottom: var(--spacing-md); resize: vertical;"></textarea>
+                
+                <div style="display: flex; gap: var(--spacing-sm);">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Enviar</button>
+                    <button type="button" class="btn btn-outline">Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Botones de ejemplo -->
+        <div style="text-align: center; margin-top: var(--spacing-xl);">
+            <button class="btn btn-primary" style="margin: var(--spacing-sm);">Botón Primario</button>
+            <button class="btn btn-secondary" style="margin: var(--spacing-sm);">Botón Secundario</button>
+            <button class="btn btn-outline" style="margin: var(--spacing-sm);">Botón Outline</button>
+        </div>
+    </div>
+</body>
+</html>
