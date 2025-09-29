@@ -1,25 +1,43 @@
 {
   "name": "angular-ecommerce-styles",
-  "version": "1.0.0",
-  "description": "Sistema de estilos SCSS para proyectos de e-commerce en Angular",
+  "version": "2.0.0",
+  "description": "Sistema COMPLETO de estilos SCSS para e-commerce Angular - 100% de componentes incluidos (Modal, Pagination, Tabs, Toast, Carousel, Skeleton Loading y más)",
   "main": "_variables.scss",
   "files": [
     "_variables.scss",
     "_components.scss",
     "README.md"
   ],
+  "scripts": {
+    "validate": "sass --check _variables.scss _components.scss",
+    "format": "prettier --write *.scss *.md",
+    "lint": "stylelint **/*.scss"
+  },
   "keywords": [
     "angular",
     "scss",
+    "sass",
     "ecommerce",
     "styles",
     "components",
-    "design-system"
+    "design-system",
+    "css",
+    "frontend"
   ],
   "author": "LauraCD2",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/LauraCD2/styles.git"
+  },
+  "homepage": "https://github.com/LauraCD2/styles#readme",
+  "bugs": {
+    "url": "https://github.com/LauraCD2/styles/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "peerDependencies": {
+    "sass": "^1.0.0"
   }
 }
