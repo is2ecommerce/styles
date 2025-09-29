@@ -27,19 +27,14 @@ npm install sass --save-dev
 ## 📁 Estructura del Proyecto
 
 ```
-styles/                          # ← Repositorio principal ANGULAR
-├── 🎯 ARCHIVOS PRINCIPALES ANGULAR:
-│   ├── _variables.scss          # Variables SCSS para Angular
-│   ├── _components.scss         # Componentes SCSS con mixins
-│   └── angular-styles.css       # Estilos globales Angular
-├── 📁 examples/                 # Ejemplos de componentes Angular
-│   ├── product-card.component.ts
-│   └── product-card.component.scss
-├── 📁 css-generic/              # Versión CSS genérica (otros proyectos)
-│   ├── variables.css            # CSS vanilla
-│   ├── components.css           # CSS vanilla
-│   ├── ejemplo.html             # Demo HTML con CSS
-│   └── README.md               # Documentación CSS específica
+styles/                          # ← Repositorio para Angular
+├── 🎯 ARCHIVOS PRINCIPALES SCSS:
+│   ├── _variables.scss          # Variables y mixins SCSS
+│   ├── _components.scss         # Todos los componentes (incluye carrito)
+├── � EJEMPLO CARRITO ANGULAR:
+│   ├── carrito.component.ts     # Componente TypeScript completo
+│   ├── carrito.component.html   # Template Angular con directivas
+│   └── carrito.component.scss   # Estilos específicos del componente
 ├── package.json                 # Configuración NPM
 └── README.md                   # Esta documentación
 ```

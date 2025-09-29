@@ -1,44 +1,25 @@
 {
   "name": "angular-ecommerce-styles",
   "version": "1.0.0",
-  "description": "Sistema de estilos optimizado para Angular E-commerce",
+  "description": "Sistema de estilos SCSS para proyectos de e-commerce en Angular",
   "main": "_variables.scss",
-  "scripts": {
-    "build-css": "sass _variables.scss:variables.css --no-source-map",
-    "watch-css": "sass --watch _variables.scss:variables.css --no-source-map",
-    "lint-scss": "stylelint '**/*.scss'",
-    "format": "prettier --write '**/*.{scss,css}'"
-  },
+  "files": [
+    "_variables.scss",
+    "_components.scss",
+    "README.md"
+  ],
   "keywords": [
     "angular",
-    "css",
     "scss",
-    "design-system",
-    "e-commerce",
-    "ui-components"
+    "ecommerce",
+    "styles",
+    "components",
+    "design-system"
   ],
-  "author": "Tu Nombre",
+  "author": "LauraCD2",
   "license": "MIT",
-  "devDependencies": {
-    "sass": "^1.69.0",
-    "stylelint": "^15.10.0",
-    "stylelint-config-standard-scss": "^11.0.0",
-    "prettier": "^3.0.0"
-  },
-  "peerDependencies": {
-    "@angular/core": ">=15.0.0",
-    "@angular/common": ">=15.0.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/LauraCD2/styles.git"
-  },
-  "files": [
-    "_variables.scss",
-    "_components.scss", 
-    "angular-styles.css",
-    "examples/",
-    "css-generic/",
-    "README.md"
-  ]
+  }
 }
