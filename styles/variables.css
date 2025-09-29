@@ -1,1 +1,19 @@
-var 
+:root {
+  /* Paleta de colores */
+  --color-primary: #1565c0;
+  --color-secondary: #f06292;
+  --color-success: #43a047;
+  --color-error: #e53935;
+  --color-warning: #ffa000;
+  --color-background: #f4f6fa;
+  --color-text: #282828;
+
+  /* Tipografía */
+  --font-main: 'Montserrat', Arial, sans-serif;
+  --font-secondary: 'Roboto', Helvetica, sans-serif;
+
+  /* Tamaños de fuente */
+  --font-size-title: 2.25rem;
+  --font-size-subtitle: 1.5rem;
+  --font-size-base: 1rem;
+}
