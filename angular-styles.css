@@ -1,0 +1,82 @@
+/* Estilos globales para Angular - styles.css */
+
+/* Importar variables */
+@import './styles/variables.css';
+@import './styles/components.css';
+
+/* Reset básico para Angular */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.6;
+}
+
+/* Estilos específicos para Angular Material (si se usa) */
+.mat-button {
+  font-family: var(--font-main) !important;
+}
+
+.mat-form-field {
+  font-family: var(--font-secondary) !important;
+}
+
+/* Clases utilitarias específicas para Angular */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.page-header {
+  padding: var(--spacing-lg) 0;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.page-content {
+  padding: var(--spacing-md);
+}
+
+/* Animaciones para routing de Angular */
+.route-animation {
+  transition: var(--transition-normal);
+}
+
+/* Loading spinner personalizado */
+.loading-spinner {
+  border: 3px solid var(--color-border);
+  border-top: 3px solid var(--color-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: var(--spacing-lg) auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive utilities */
+.d-none { display: none; }
+.d-block { display: block; }
+
+@media (max-width: 768px) {
+  .d-md-none { display: none; }
+  .d-md-block { display: block; }
+}
+
+@media (min-width: 769px) {
+  .d-md-none { display: block; }
+  .d-md-block { display: none; }
+}
